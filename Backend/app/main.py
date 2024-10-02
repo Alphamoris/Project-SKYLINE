@@ -1,7 +1,12 @@
 from fastapi import FastAPI
-
+from database import cur_obj
 app=FastAPI()
 
 @app.get("/")
 def something():
-    return {"msg" : "Here is The First message from me ,HI!!"}
+    cur_obj.execute("select * from images")
+    data = cur_obj.fetchall()
+    print(data)
+    return {"msg" : data }
+
+
