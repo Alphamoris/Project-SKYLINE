@@ -5,14 +5,7 @@ from psycopg2.extras import RealDictCursor
 import time
 from schemas import db
 
-database_params : dict = {
-    "database" : "simple" ,
-    "user" : "postgres" ,
-    "password" : "8072052338." ,
-    "host" : "localhost" ,
-    "port" : "5432" ,
-    "cursor_factory" : RealDictCursor
- }
+
 
 con_obj = psycopg2.connect(**database_params)
 print("Connected To The Database Successfully")
